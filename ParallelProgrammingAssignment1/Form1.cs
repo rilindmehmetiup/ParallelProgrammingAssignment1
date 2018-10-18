@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace ParallelProgrammingAssignment1
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        public int number_of_processors;
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            number_of_processors = Environment.ProcessorCount;
+            MessageBox.Show("Number of available processors is " + number_of_processors.ToString());
         }
     }
 }
