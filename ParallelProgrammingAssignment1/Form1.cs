@@ -23,15 +23,21 @@ namespace ParallelProgrammingAssignment1
         {
             number_of_processors = Environment.ProcessorCount;
             populate_processors_combobox();
+            cmb_processors.SelectedIndex = 0;
         }
 
         private void populate_processors_combobox()
         {           
             for(int i= 1; i <= number_of_processors; i++)
             {
-                ComboboxItem item = new ComboboxItem(i.ToString()+" Processor", i);
+                ComboboxItem item = new ComboboxItem(i.ToString()+this.pluralize(" Processor", i), i);
                 cmb_processors.Items.Add(item);
             }
+        }
+
+        private string pluralize(string text, int counter)
+        {
+            return counter <= 1 ? text : text + "s";
         }
     }
 }
