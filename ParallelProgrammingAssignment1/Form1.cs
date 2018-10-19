@@ -22,7 +22,16 @@ namespace ParallelProgrammingAssignment1
         private void MainForm_Load(object sender, EventArgs e)
         {
             number_of_processors = Environment.ProcessorCount;
-            MessageBox.Show("Number of available processors is " + number_of_processors.ToString());
+            populate_processors_combobox();
+        }
+
+        private void populate_processors_combobox()
+        {           
+            for(int i= 1; i <= number_of_processors; i++)
+            {
+                ComboboxItem item = new ComboboxItem(i.ToString()+" Processor", i);
+                cmb_processors.Items.Add(item);
+            }
         }
     }
 }
