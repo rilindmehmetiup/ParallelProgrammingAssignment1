@@ -31,9 +31,8 @@ namespace ParallelProgrammingAssignment1
             {
                 // 0 and 1 are not prime numbers
                 case 0:
-                case 1:
                     return false;
-
+                case 1:                                  
                 case 2:
                 case 3:
                     return true;

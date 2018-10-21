@@ -32,14 +32,15 @@
             this.lbl_processors = new System.Windows.Forms.Label();
             this.btn_calculate = new System.Windows.Forms.Button();
             this.dg_result = new System.Windows.Forms.DataGridView();
+            this.txt_prime = new System.Windows.Forms.TextBox();
+            this.lbl_primes = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processors_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bound_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.start_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.end_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prime_numbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_prime = new System.Windows.Forms.TextBox();
-            this.lbl_primes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_result)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.cmb_processors.Name = "cmb_processors";
             this.cmb_processors.Size = new System.Drawing.Size(177, 24);
             this.cmb_processors.TabIndex = 0;
+            this.cmb_processors.SelectedIndexChanged += new System.EventHandler(this.cmb_processors_SelectedIndexChanged);
             // 
             // lbl_processors
             // 
@@ -81,6 +83,7 @@
             this.dg_result.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dg_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_result.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.processors_number,
             this.bound_number,
             this.start_time,
@@ -95,6 +98,30 @@
             this.dg_result.RowTemplate.Height = 24;
             this.dg_result.Size = new System.Drawing.Size(910, 407);
             this.dg_result.TabIndex = 3;
+            // 
+            // txt_prime
+            // 
+            this.txt_prime.Location = new System.Drawing.Point(17, 132);
+            this.txt_prime.Name = "txt_prime";
+            this.txt_prime.Size = new System.Drawing.Size(178, 22);
+            this.txt_prime.TabIndex = 4;
+            this.txt_prime.TextChanged += new System.EventHandler(this.txt_prime_TextChanged);
+            // 
+            // lbl_primes
+            // 
+            this.lbl_primes.AutoSize = true;
+            this.lbl_primes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_primes.Location = new System.Drawing.Point(13, 104);
+            this.lbl_primes.Name = "lbl_primes";
+            this.lbl_primes.Size = new System.Drawing.Size(171, 25);
+            this.lbl_primes.TabIndex = 5;
+            this.lbl_primes.Text = "Prime numbers till:";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "#";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // processors_number
             // 
@@ -132,24 +159,6 @@
             this.prime_numbers.Name = "prime_numbers";
             this.prime_numbers.ReadOnly = true;
             // 
-            // txt_prime
-            // 
-            this.txt_prime.Location = new System.Drawing.Point(17, 132);
-            this.txt_prime.Name = "txt_prime";
-            this.txt_prime.Size = new System.Drawing.Size(178, 22);
-            this.txt_prime.TabIndex = 4;
-            this.txt_prime.TextChanged += new System.EventHandler(this.txt_prime_TextChanged);
-            // 
-            // lbl_primes
-            // 
-            this.lbl_primes.AutoSize = true;
-            this.lbl_primes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_primes.Location = new System.Drawing.Point(13, 104);
-            this.lbl_primes.Name = "lbl_primes";
-            this.lbl_primes.Size = new System.Drawing.Size(171, 25);
-            this.lbl_primes.TabIndex = 5;
-            this.lbl_primes.Text = "Prime numbers till:";
-            // 
             // MainForm
             // 
             this.AccessibleName = "MainForm";
@@ -182,14 +191,15 @@
         private System.Windows.Forms.Label lbl_processors;
         private System.Windows.Forms.Button btn_calculate;
         private System.Windows.Forms.DataGridView dg_result;
+        private System.Windows.Forms.TextBox txt_prime;
+        private System.Windows.Forms.Label lbl_primes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn processors_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn bound_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn start_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn end_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn prime_numbers;
-        private System.Windows.Forms.TextBox txt_prime;
-        private System.Windows.Forms.Label lbl_primes;
     }
 }
 
